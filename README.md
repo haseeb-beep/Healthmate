@@ -7,7 +7,7 @@ It simulates a basic EHR workflow — users can sign up/login, patients can book
 
 ## Group Members
 - Haseeb Haider  
-- Abul Rehman  
+- Abdul Rehman  
 
 ## Technologies Used
 - HTML5  
