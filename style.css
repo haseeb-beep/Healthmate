@@ -1,0 +1,134 @@
+:root {
+    --primary-teal: #188D99;
+    --dark-navy: #003859;
+    --bg-mint: #F6FFFB;
+    --accent-mint: #AEE6D8;
+    --text-dark: #333333;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    /* Set background image fixed to viewport */
+    background: url('bg.jpg') no-repeat center center fixed; /* FIXED: Changed filename to bg.jpg */
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Glassmorphism Classes */
+.glass-card, .glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.glass-card {
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+.brand-text {
+    letter-spacing: 0.5px;
+}
+
+/* Auth Page */
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+}
+
+/* Hero Section */
+.hero-wrap {
+    min-height: 85vh;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(24, 141, 153, 0.2);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+/* Custom Buttons */
+.btn-teal {
+    background-color: var(--primary-teal);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-teal:hover {
+    background-color: #126e78;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-teal {
+    border: 2px solid var(--primary-teal);
+    color: var(--primary-teal);
+    font-weight: 500;
+}
+.btn-outline-teal:hover {
+    background-color: var(--primary-teal);
+    color: white;
+}
+
+.btn-navy {
+    background-color: var(--dark-navy);
+    color: white;
+}
+.btn-navy:hover {
+    background-color: #00263e;
+    transform: translateY(-2px);
+}
+
+/* Dashboard Elements */
+.bg-teal-gradient {
+    background: linear-gradient(135deg, var(--primary-teal) 0%, #20b2c2 100%);
+}
+.bg-mint {
+    background-color: var(--accent-mint) !important;
+}
+
+/* Animations */
+.animate-up {
+    animation: slideUp 0.8s ease-out;
+}
+.animate-fade {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
