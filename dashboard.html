@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthMate - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo1.png" alt="Logo" height="40" class="me-2 bg-white rounded p-1">
+                HealthMate
+            </a>
+            <div class="d-flex text-white align-items-center">
+                <span class="me-3 d-none d-md-block" id="userDisplay">Welcome</span>
+                <button onclick="logout()" class="btn btn-outline-light btn-sm">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pb-5">
+        
+        <section id="admin-section" class="d-none">
+            <h2 class="mb-4 text-secondary">Admin Control Panel</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h5 class="text-teal">Add New Doctor</h5>
+                        <form id="addDoctorForm">
+                            <input type="text" class="form-control mb-2" id="docName" placeholder="Doctor Name" required>
+                            <input type="text" class="form-control mb-2" id="docSpec" placeholder="Specialization" required>
+                            <button type="submit" class="btn btn-primary custom-btn w-100">Add Doctor</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card shadow-sm p-3">
+                        <h5>Registered Doctors</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover mt-2">
+                                <thead class="table-light"><tr><th>Name</th><th>Specialization</th><th>Action</th></tr></thead>
+                                <tbody id="doctorTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card shadow-sm p-3">
+                        <h5>All Appointments</h5>
+                        <table class="table table-bordered mt-2">
+                            <thead class="table-light"><tr><th>Patient</th><th>Date</th><th>Diagnosis</th><th>Action</th></tr></thead>
+                            <tbody id="allAppointmentsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="doctor-section" class="d-none">
+            <div class="d-flex justify-content-between mb-4">
+                <h2 class="text-secondary">Doctor Dashboard</h2>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="availabilitySwitch" checked>
+                    <label class="form-check-label" for="availabilitySwitch">Available</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card shadow-sm p-4">
+                        <h5 class="text-teal mb-3">Create Appointment / Diagnosis</h5>
+                        <form id="prescriptionForm">
+                            <div class="mb-3"><input type="text" class="form-control" id="pName" placeholder="Patient Name" required></div>
+                            <div class="mb-3"><input type="date" class="form-control" id="pDate" required></div>
+                            <div class="mb-3"><input type="text" class="form-control" id="pBP" placeholder="BP Level (e.g. 120/80)" required></div>
+                            <div class="mb-3"><input type="text" class="form-control" id="pDisease" placeholder="Diagnosis" required></div>
+                            <button type="submit" class="btn btn-primary custom-btn w-100">Save Record</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow-sm p-3">
+                        <h5>My Appointments</h5>
+                        <table class="table table-striped mt-3">
+                            <thead><tr><th>Date</th><th>Patient</th><th>Details</th><th>Action</th></tr></thead>
+                            <tbody id="docAppointmentsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patient-section" class="d-none">
+            <h2 class="mb-4 text-secondary">My Medical Records</h2>
+            <div id="patientRecords" class="row g-4">
+                <div class="col-12 text-center text-muted"><p>No records found. Visit a doctor to get a checkup.</p></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
